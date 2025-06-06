@@ -59,3 +59,10 @@
   margin: 0;
   padding: 0;
 }
+
+.blogposts {
+  text-align: center;
+  margin: 0 auto;
+  justify-content: center;
+  margin: 100px;
+}

@@ -17,19 +17,26 @@ const sortedPosts = blogPosts.sort(
           <a href={`/blog/${post.slug}`}>
             <h2 class="post-title">{post.data.title}</h2>
             <p class="post-description">{post.data.description}</p>
-            <time class="post-date">{post.data.pubDate.toLocaleDateString('nl-BE', {
-              year: 'numeric',
-              month: 'numeric',
-              day: 'numeric',
-            })}</time>
+            <time class="post-date">
+              {post.data.pubDate.toLocaleDateString('nl-BE', {
+                year: 'numeric',
+                month: 'numeric',
+                day: 'numeric',
+              })}
+            </time>
           </a>
         </li>
       ))
     }
   </ul>
+  <a href="/" class="back">Back to main page</a>
 </div>
 
 <style is:global>
+  .back {
+    text-align: center;
+  }
+
   @font-face {
     font-family: jb;
     src: url(https://new.nyabyte.dev/JetBrains.ttf);
