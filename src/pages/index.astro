@@ -1,0 +1,47 @@
+---
+import s from './index.module.css'
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <style>
+    html {
+      overflow-x: hidden;
+    }
+  </style>
+  <body class={s.body}>
+    <h1 class={`${s.name} ${s.gradient}`}>Wurdle</h1>
+    <p class={s.desc}>
+      Hey, I'm&nbsp;<span class={s.gradient}>Wurdle</span>! I'm a Flemish web
+      dev living in the US.
+    </p>
+    <p class={s.desc}>
+      I've been trying to expand into more than just web dev recently, trying
+      out game dev and Minecraft modding,<br /> but nothing's really stuck. Feel
+      free to give me your suggestions!
+    </p>
+    <br />
+    <p class={s.reachout}>
+      I'm always looking to help out with projects feel free to reach out here: <br
+      />
+      <small class={s.warning}
+        >(Fair warning, I do kinda suck in 99% of cases)</small
+      >
+    </p>
+    <div class={s.sociallinks}>
+      <p>Email: <a href="mailto:wurdle@wurdle.eu">wurdle@wurdle.eu</a></p>
+      <p>Discord: Wurbler</p>
+      <p>Github: <a href="https://github.com/wurdleturtle">wurdleturtle</a></p>
+      <p>Bluesky: <a href="https://wurdle.eu">wurdle.eu</a></p>
+      <p>Steam: Wurdle</p>
+      <small class={s.warning}> Email or Discord's recommended</small>
+    </div>
+    <a href="/blog">View my blog posts!</a>
+  </body>
+</html>

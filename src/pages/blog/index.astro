@@ -1,0 +1,141 @@
+---
+import { getCollection } from 'astro:content'
+
+const blogPosts = await getCollection('blog')
+const sortedPosts = blogPosts.sort(
+  (a: any, b: any) =>
+    new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+)
+---
+
+<div class="blog-list">
+  <h1 class="name gradient">Blog Posts</h1>
+  <ul class="posts">
+    {
+      sortedPosts.map((post: any) => (
+        <li class="post-item">
+          <a href={`/blog/${post.slug}`}>
+            <h2 class="post-title">{post.data.title}</h2>
+            <p class="post-description">{post.data.description}</p>
+            <time class="post-date">{post.data.pubDate.toLocaleDateString('nl-BE', {
+              year: 'numeric',
+              month: 'numeric',
+              day: 'numeric',
+            })}</time>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style is:global>
+  @font-face {
+    font-family: jb;
+    src: url(https://new.nyabyte.dev/JetBrains.ttf);
+  }
+
+  * {
+    font-family: jb;
+  }
+
+  body {
+    background-color: #111;
+    color: #fff;
+    margin: 0;
+    min-height: 100vh;
+  }
+</style>
+
+<style>
+  .blog-list {
+    max-width: 100ch;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    color: #fff;
+  }
+
+  .name {
+    font-size: 3rem;
+    text-align: center;
+    margin: 0 auto 2rem;
+  }
+
+  .gradient {
+    background: linear-gradient(75deg, #005eff, rgb(30, 255, 0));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    display: block;
+  }
+
+  .posts {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .post-item {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #333;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .post-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .post-item a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .post-item:hover {
+    transform: translateX(8px);
+  }
+
+  .post-item:hover a {
+    background-color: #1a1a1a;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .post-title {
+    font-size: 1.8rem;
+    margin: 0 0 0.5rem;
+    color: #e6e6e6;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .post-description {
+    color: #ccc;
+    margin: 0 0 0.5rem;
+    line-height: 1.5;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .post-date {
+    color: #888;
+    font-size: 0.9rem;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .post-item:hover .post-title {
+    color: #005eff;
+  }
+
+  .post-item:hover .post-description {
+    color: #fff;
+  }
+
+  .post-item:hover .post-date {
+    color: #ccc;
+  }
+</style>

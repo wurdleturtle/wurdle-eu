@@ -1,0 +1,61 @@
+@font-face {
+  font-family: jb;
+  src: url(https://new.nyabyte.dev/JetBrains.ttf);
+}
+
+* {
+  font-family: jb;
+}
+
+.body {
+  background-color: #111;
+  color: #fff;
+}
+
+.name {
+  font-family: jb;
+  font-size: 3rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.desc {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.gradient {
+  background: linear-gradient(75deg, #005eff, rgb(30, 255, 0));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  display: block;
+  width: 4em;
+}
+
+.warning {
+  text-align: center;
+  margin: 0 auto;
+  width: 100vw;
+}
+
+.reachout {
+  text-align: center;
+}
+
+.sociallinks {
+  margin: 0 auto;
+  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 0;
+}
+
+.sociallinks p {
+  margin: 0;
+  padding: 0;
+}
