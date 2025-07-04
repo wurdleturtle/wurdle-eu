@@ -17,7 +17,7 @@ tags: ['tailwind', 'CSS', 'web-dev']
 
 &nbsp;&nbsp;&nbsp;&nbsp;Now, while I do think Tailwind is pretty great now, and I'm absolutely going to use it on projects moving forward, I do have some gripes with it.
 
-\*_1. Tailwind is too shortened._
+**1. Tailwind is too shortened.**
 
 &nbsp;&nbsp;&nbsp;&nbsp;When I say Tailwind is too shortened, I mean too many abbreviations. While on one hand, I get it, Tailwind is already ugly enough to look at; you don't want to make it worse by making it even longer. I also found it very hard to switch over, constantly having to go search up how to do stuff with it because it just wasn't nearly as "intuitive" as normal CSS is.
 
